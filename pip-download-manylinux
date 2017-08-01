@@ -59,6 +59,7 @@ def main(args):
 	except KeyboardInterrupt:
 		container.kill()
 		shutil.rmtree(output_dir)
+	container.remove()
 
 	# Clean up temporary directory.
 	shutil.rmtree(temp_dir)
