@@ -5,7 +5,7 @@ This downloader works by fetching manylinux wheels if they exist, and if they do
 
 Installation
 ------------
-First, install [Docker](https://docs.docker.com/docker-for-mac/install/), and install the official Docker python library with `pip install docker`.  Also pull the basis image for the manylinux spec with `docker pull quay.io/pypa/manylinux1_x86_64`.
+First, install [Docker](https://docs.docker.com/docker-for-mac/install/).
 
 You can either run the script directly, or add it to your path.
 

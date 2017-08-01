@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import argparse, sys, tempfile, shutil, os, subprocess, stat
-import docker
+import pip
 
 def main(args):
 	parser = argparse.ArgumentParser()
@@ -39,7 +39,10 @@ def main(args):
 		command = parsed.c.rstrip(';') + ';' + command
 
 	# Run docker container and download packages.
+	pip.main(['install', 'docker'])
+	import docker
 	client = docker.from_env()
+	client.images.pull('quay.io/pypa/manylinux1_x86_64')
 	container = client.containers.create(
 		image='quay.io/pypa/manylinux1_x86_64',
 		volumes={
