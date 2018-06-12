@@ -19,7 +19,7 @@ echo "export PATH=\$PATH:`pwd`" >> ~/.bashrc
 Usage
 -----
 ```bash
-pip-download-manylinux -r <pip requirements file> -d <output directory> -c <command> --python-tag <tag> --abi-tag <tag>
+./pip-download-manylinux.py -r <pip requirements file> -d <output directory> -c <command> --python-tag <tag> --abi-tag <tag>
 ```
 
 The command passed to `-c` gets run in the docker container before the download/compilation step (if you would like to issue multiple commands, separate them with a semicolon).
