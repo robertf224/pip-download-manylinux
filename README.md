@@ -5,16 +5,7 @@ This downloader works by fetching manylinux wheels if they exist, and if they do
 
 Installation
 ------------
-First, install [Docker](https://docs.docker.com/docker-for-mac/install/).
-
-You can either run the script directly, or add it to your path.
-
-If you would like to add it to your path, `cd` into the directory you want to install the wrapper (possibly `/usr/local/bin`), and then:
-```bash
-git clone git@github.palantir.build:rfidler/pip-download-manylinux-wrapper.git
-cd pip-download-manylinux-wrapper
-echo "export PATH=\$PATH:`pwd`" >> ~/.bashrc
-```
+Install [Docker](https://docs.docker.com/docker-for-mac/install/) and pydocker (`pip install docker`).
 
 Usage
 -----
@@ -24,4 +15,4 @@ Usage
 
 The command passed to `-c` gets run in the docker container before the download/compilation step (if you would like to issue multiple commands, separate them with a semicolon).
 
-The `--python-tag` and `--abi-tag` arguments specify the targeted python distribution according to (https://www.python.org/dev/peps/pep-0425/).  Skylab/Houston use cp27 and cp27m, respectively (and thus these are the default arguments).
+The `--python-tag` and `--abi-tag` arguments specify the targeted python distribution according to (https://www.python.org/dev/peps/pep-0425/).  cp27 and cp27m, respectively, are the default arguments.
